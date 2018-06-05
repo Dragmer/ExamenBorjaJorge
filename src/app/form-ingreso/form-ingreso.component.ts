@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 
 export class FormIngresoComponent implements OnInit {
 
+
   hijos = [
     {value: '0', viewValue: '0'},
     {value: '1', viewValue: '1'},
@@ -28,12 +29,7 @@ export class FormIngresoComponent implements OnInit {
   }
   public pacientes= [];
 
-  clickLimpiar(nombre: string, apellidos: string, fechaNacimiento: string, hijo: number, seguro: boolean) {
-    nombre = "";
-    apellidos = "";
-    fechaNacimiento = "";
-    hijo = 0;
-    seguro = false;
+  clickLimpiar() {
   }
 
   numeroPacientes = 0;
