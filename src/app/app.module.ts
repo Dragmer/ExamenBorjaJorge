@@ -15,6 +15,9 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';    //api
 import {InputTextModule} from 'primeng/inputtext';
 import { FormMedicamentoComponent } from './form-medicamento/form-medicamento.component';
 import {ButtonModule} from 'primeng/button';
+import {CardModule} from 'primeng/card';
+import { CardPacienteSeleccionadoComponent } from './card-paciente-seleccionado/card-paciente-seleccionado.component';
+import { TablaMedicamentosComponent } from './tabla-medicamentos/tabla-medicamentos.component';
 
 
 @NgModule({
@@ -23,7 +26,9 @@ import {ButtonModule} from 'primeng/button';
     CarruselComponent,
     FormIngresoComponent,
     CardPacienteComponent,
-    FormMedicamentoComponent
+    FormMedicamentoComponent,
+    CardPacienteSeleccionadoComponent,
+    TablaMedicamentosComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +41,8 @@ import {ButtonModule} from 'primeng/button';
     MatCardModule,
     MatButtonToggleModule,
     InputTextModule,
-    ButtonModule
+    ButtonModule,
+    CardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
