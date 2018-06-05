@@ -13,11 +13,10 @@ import { CardPacienteComponent } from './card-paciente/card-paciente.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';    //api
 import {InputTextModule} from 'primeng/inputtext';
-import { FormMedicamentoComponent } from './form-medicamento/form-medicamento.component';
+import {FormMedicamentoComponent } from './form-medicamento/form-medicamento.component';
 import {ButtonModule} from 'primeng/button';
 import {CardModule} from 'primeng/card';
-import { CardPacienteSeleccionadoComponent } from './card-paciente-seleccionado/card-paciente-seleccionado.component';
-import { TablaMedicamentosComponent } from './tabla-medicamentos/tabla-medicamentos.component';
+import {CardPacienteSeleccionadoComponent } from './card-paciente-seleccionado/card-paciente-seleccionado.component';
 
 
 @NgModule({
@@ -27,8 +26,7 @@ import { TablaMedicamentosComponent } from './tabla-medicamentos/tabla-medicamen
     FormIngresoComponent,
     CardPacienteComponent,
     FormMedicamentoComponent,
-    CardPacienteSeleccionadoComponent,
-    TablaMedicamentosComponent
+    CardPacienteSeleccionadoComponent
   ],
   imports: [
     BrowserModule,
