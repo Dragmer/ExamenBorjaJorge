@@ -9,12 +9,16 @@ import { FormIngresoComponent } from './form-ingreso/form-ingreso.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { CardPacienteComponent } from './card-paciente/card-paciente.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 @NgModule({
   declarations: [
     AppComponent,
     CarruselComponent,
-    FormIngresoComponent
+    FormIngresoComponent,
+    CardPacienteComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +27,9 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     MatCheckboxModule,
     MatInputModule,
     MatSelectModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatCardModule,
+    MatButtonToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
