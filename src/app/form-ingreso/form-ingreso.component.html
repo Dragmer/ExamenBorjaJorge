@@ -1,18 +1,18 @@
 <div class="container">
   <mat-form-field>
-    <input #nombre matInput placeholder="Nombres">
+    <input matInput placeholder="Nombres">
   </mat-form-field>
   <br>
   <mat-form-field>
-    <input #apellidos matInput placeholder="Apellidos">
+    <input matInput placeholder="Apellidos">
   </mat-form-field>
   <br>
   <mat-form-field>
-    <input #fechaNacimiento matInput placeholder="Fecha de Nacimiento">
+    <input matInput placeholder="Fecha de Nacimiento">
   </mat-form-field>
   <br>
   <mat-form-field>
-    <mat-select #hijo placeholder="Numero de Hijos">
+    <mat-select placeholder="Numero de Hijos">
       <mat-option *ngFor="let hijo of hijos" [value]="hijo.value">
         {{ hijo.viewValue }}
       </mat-option>
@@ -20,15 +20,13 @@
   </mat-form-field>
   <br>
   <mat-form-field>
-    <mat-select #seguro placeholder="Seguro">
+    <mat-select placeholder="Seguro">
       <mat-option *ngFor="let seguro of seguros" [value]="seguro.value">
         {{ seguro.viewValue }}
       </mat-option>
     </mat-select>
   </mat-form-field>
   <br>
-  <button mat-button (click)="clickLimpiar()">Limpiar</button>
-  <button type="submit" mat-button (click)="clickCrear(nombre.value, apellidos.value, fechaNacimiento.value, hijo.value, seguro.value)">Crear</button>
-  <br>
-  <ul><li *ngFor="let paciente of pacientes">{{paciente.nombres}}</li></ul>
+  <button mat-button>Limpiar</button>
+  <button mat-button>Crear</button>
 </div>

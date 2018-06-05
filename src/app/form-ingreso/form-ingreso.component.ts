@@ -20,30 +20,9 @@ export class FormIngresoComponent implements OnInit {
     {value: 'true', viewValue: 'Si'},
     {value: 'false', viewValue: 'No'}
   ];
-
   constructor() { }
 
   ngOnInit() {
   }
-  pacientes= [];
-
-  clickLimpiar() {
-
-  }
-  clickCrear(nombre: string, apellidos: string, fechaNacimiento: string, hijo: number, seguro: boolean) {
-      let paciente1 : Paciente = new Paciente(1,nombre,apellidos,fechaNacimiento,hijo,seguro);
-      this.pacientes = [paciente1];
-  }
-}
-
-class Paciente {
-  constructor(
-    public id: number,
-    public nombres: string,
-    public apellidos: string,
-    public fechaNacimiento: string,
-    public hijos: number,
-    public seguro: boolean
-  ) {  }
 
 }
