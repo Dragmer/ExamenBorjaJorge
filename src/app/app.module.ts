@@ -11,14 +11,19 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { CardPacienteComponent } from './card-paciente/card-paciente.component';
 import {MatCardModule} from '@angular/material/card';
-import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';    //api
+import {InputTextModule} from 'primeng/inputtext';
+import { FormMedicamentoComponent } from './form-medicamento/form-medicamento.component';
+import {ButtonModule} from 'primeng/button';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     CarruselComponent,
     FormIngresoComponent,
-    CardPacienteComponent
+    CardPacienteComponent,
+    FormMedicamentoComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +34,9 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     MatSelectModule,
     MatDatepickerModule,
     MatCardModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    InputTextModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
