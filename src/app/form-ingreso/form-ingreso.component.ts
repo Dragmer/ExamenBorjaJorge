@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class FormIngresoComponent implements OnInit {
 
   hijos = [
+    {value: '0', viewValue: '0'},
     {value: '1', viewValue: '1'},
     {value: '2', viewValue: '2'},
     {value: '3', viewValue: '3'},
@@ -25,14 +26,23 @@ export class FormIngresoComponent implements OnInit {
 
   ngOnInit() {
   }
-  pacientes= [];
+  public pacientes= [];
 
-  clickLimpiar() {
-
+  clickLimpiar(nombre: string, apellidos: string, fechaNacimiento: string, hijo: number, seguro: boolean) {
+    nombre = "";
+    apellidos = "";
+    fechaNacimiento = "";
+    hijo = 0;
+    seguro = false;
   }
+
+  numeroPacientes = 0;
+  idPaciente = 0;
   clickCrear(nombre: string, apellidos: string, fechaNacimiento: string, hijo: number, seguro: boolean) {
-      let paciente1 : Paciente = new Paciente(1,nombre,apellidos,fechaNacimiento,hijo,seguro);
-      this.pacientes = [paciente1];
+    this.numeroPacientes = this.pacientes.length;
+    this.idPaciente = this.numeroPacientes +1;
+    let paciente1 : Paciente = new Paciente(this.idPaciente,nombre,apellidos,fechaNacimiento,hijo,seguro);
+    this.pacientes.push(paciente1)
   }
 }
 
