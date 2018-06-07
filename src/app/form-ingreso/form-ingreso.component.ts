@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {DataService} from "../../data.service";
 
 @Component({
   selector: 'app-form-ingreso',
   templateUrl: './form-ingreso.component.html',
-  styleUrls: ['./form-ingreso.component.css']
+  styleUrls: ['./form-ingreso.component.css'],
+  providers: [DataService]
 })
 
 export class FormIngresoComponent implements OnInit {
-
-
   hijos = [
     {value: '0', viewValue: '0'},
     {value: '1', viewValue: '1'},
@@ -23,17 +23,27 @@ export class FormIngresoComponent implements OnInit {
     {value: 'false', viewValue: 'No'}
   ];
 
-  constructor() { }
+  message: string;
+
+  constructor(private data:DataService) {
+    this.numeroPacientes = this.pacientes.length;
+    this.idPaciente = this.numeroPacientes +1;
+    let paciente1 : Paciente = new Paciente(this.idPaciente,'Ivan','Borja','24/04/2019',2,true);
+    this.pacientes.push(paciente1)
+  }
 
   ngOnInit() {
+    this.data.currentMessage.subscribe(message => this.message = message)
   }
   public pacientes= [];
+  @Input () paciente : Paciente;
 
   clickLimpiar() {
   }
 
   numeroPacientes = 0;
   idPaciente = 0;
+
   clickCrear(nombre: string, apellidos: string, fechaNacimiento: string, hijo: number, seguro: boolean) {
     this.numeroPacientes = this.pacientes.length;
     this.idPaciente = this.numeroPacientes +1;
