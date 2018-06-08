@@ -24,11 +24,11 @@ export class FormMedicamentoComponent implements OnInit {
   clickLimpiar() {
     this.numeroMedicamento = this.arregloMedicamentos.length;
     this.idMedicamento = this.numeroMedicamento +1;
-    let medicamento1 : Medicamento = new Medicamento(this.idMedicamento,'Paracetamol','De vainas raras','que note mueras',0.5,'10','1');
+    let medicamento1 : Medicamento = new Medicamento(this.idMedicamento,'Paracetamol','De vainas raras','que note mueras',0.5,10,'1');
     this.arregloMedicamentos.push(medicamento1);
-    let medicamento2 : Medicamento = new Medicamento(this.idMedicamento,'Viagra','De vainas raras','que note mueras',0.8,'10','1');
+    let medicamento2 : Medicamento = new Medicamento(this.idMedicamento,'Viagra','De vainas raras','que note mueras',0.8,10,'1');
     this.arregloMedicamentos.push(medicamento2);
-    let medicamento3 : Medicamento = new Medicamento(this.idMedicamento,'Finalin','De vainas raras','que note mueras',1.5,'10','1');
+    let medicamento3 : Medicamento = new Medicamento(this.idMedicamento,'Finalin','De vainas raras','que note mueras',1.5,10,'1');
     this.arregloMedicamentos.push(medicamento3);
     //execute action
   }
