@@ -10,5 +10,7 @@ export class AppComponent {
   title = 'app';
   arregloPacientes = [];
   pacienteSeleccionado = [];
+  arregloMedicamentos = [];
+  arregloPacienteMedicamento = [];
 }
 

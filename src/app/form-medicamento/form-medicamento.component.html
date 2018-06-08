@@ -1,35 +1,35 @@
 <div class="container">
   <span class="ui-float-label">
-    <input id="float-input1" type="text" size="30" pInputText>
-    <label for="float-input">Gramos a ingerir</label>
+    <input id="inputNombre" #nombre type="text" size="30" pInputText>
+    <label for="inputNombre">Nombre</label>
   </span>
   <br>
   <span class="ui-float-label">
-    <input id="float-input2" type="text" size="30" pInputText>
-    <label for="float-input2">Nombre</label>
+    <input id="inputComposicion" #composicion type="text" size="30" pInputText>
+    <label for="inputComposicion">Composición</label>
   </span>
   <br>
   <span class="ui-float-label">
-    <input id="float-input3" type="text" size="30" pInputText>
-    <label for="float-input3">Composición</label>
+    <input id="inputUsadoPara" #usadoPara type="text" size="30" pInputText>
+    <label for="inputUsadoPara">Usado para</label>
   </span>
   <br>
   <span class="ui-float-label">
-    <input id="float-input4" type="text" size="30" pInputText>
-    <label for="float-input4">Usado para</label>
+    <input id="inputGramosIngerir" #gramosIngerir type="text" size="30" pInputText>
+    <label for="inputGramosIngerir">Gramos a ingerir</label>
   </span>
   <br>
   <span class="ui-float-label">
-    <input id="float-input5" type="text" size="30" pInputText>
-    <label for="float-input5">Fecha de caducidad</label>
+    <input id="inputNumeroPastillas" #numeroPastillas type="text" size="30" pInputText>
+    <label for="inputNumeroPastillas">Numero de pastillas</label>
   </span>
   <br>
   <span class="ui-float-label">
-    <input id="float-input6" type="text" size="30" pInputText>
-    <label for="float-input6">Numero de pastillas</label>
+    <input id="inputFechaCaducidad" #fechaCaducidad type="text" size="30" pInputText>
+    <label for="inputFechaCaducidad">Fecha de caducidad</label>
   </span>
   <br>
-  <p-button label="Limpiar" (onClick)="clickLimpiar($event)"></p-button>
-  <p-button label="Crear" (onClick)="clickCrear($event)"></p-button>
+  <p-button label="Limpiar" (onClick)="clickLimpiar(nombre.value='',composicion.value='',usadoPara.value='',gramosIngerir.value='',numeroPastillas.value='',fechaCaducidad.value='')"></p-button>
+  <p-button label="Crear" (onClick)="clickCrear(nombre.value,composicion.value,usadoPara.value,gramosIngerir.value,numeroPastillas.value,fechaCaducidad.value)"></p-button>
 </div>
-
+<ul><li *ngFor="let medicamento of arregloMedicamentos">{{medicamento.id}}  {{medicamento.nombre}} {{medicamento.gramosIngerir}}</li></ul>
