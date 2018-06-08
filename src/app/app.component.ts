@@ -1,5 +1,6 @@
 import {Component, SimpleChanges} from '@angular/core';
 import {Paciente} from "./paciente";
+import {Medicamento} from "./medicamentos";
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,6 @@ export class AppComponent {
   arregloPacientes = [];
   pacienteSeleccionado = [];
   arregloMedicamentos = [];
-  arregloPacienteMedicamento = [];
+  arregloPacienteMedicamento = [[],[]];
 }
 
