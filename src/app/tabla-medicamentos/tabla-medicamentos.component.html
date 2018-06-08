@@ -1,0 +1,22 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>Nombre</th>
+    <th>Composicion</th>
+    <th>Gramos a Ingerir</th>
+    <th>Numero de pastillas</th>
+    <th>Caduca</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let medicamento of arregloMedicamentos">
+    <th scope="row"></th>
+    <td>{{medicamento.id}}</td>
+    <td>{{medicamento.nombre}}</td>
+    <td>{{medicamento.composicion}}</td>
+    <td>{{medicamento.gramosIngerir}}</td>
+    <td>{{medicamento.numeroPastillas}}</td>
+    <td>{{medicamento.fechaCaducidad}}</td>
+  </tr>
+</table>

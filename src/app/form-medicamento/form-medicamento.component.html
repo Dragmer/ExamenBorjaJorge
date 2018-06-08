@@ -32,4 +32,3 @@
   <p-button label="Limpiar" (onClick)="clickLimpiar(nombre.value='',composicion.value='',usadoPara.value='',gramosIngerir.value='',numeroPastillas.value='',fechaCaducidad.value='')"></p-button>
   <p-button label="Crear" (onClick)="clickCrear(nombre.value,composicion.value,usadoPara.value,gramosIngerir.value,numeroPastillas.value,fechaCaducidad.value)"></p-button>
 </div>
-<ul><li *ngFor="let medicamento of arregloMedicamentos">{{medicamento.id}}  {{medicamento.nombre}} {{medicamento.gramosIngerir}}</li></ul>

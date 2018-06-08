@@ -30,5 +30,4 @@
   <button mat-button (click)="clickLimpiar(nombre.value = '', apellidos.value = '', fechaNacimiento.value = '', hijo.value = '', seguro.value = '')">Limpiar</button>
   <button mat-button (click)="clickCrear(nombre.value, apellidos.value, fechaNacimiento.value, hijo.value, seguro.value)">Crear</button>
   <br>
-  <ul><li *ngFor="let paciente of arregloPacientes">{{paciente.id}}  {{paciente.hijos}} {{paciente.seguro}}</li></ul>
 </div>

@@ -29,18 +29,8 @@ export class FormIngresoComponent implements OnInit {
   ngOnInit() {
   }
 
-  //clickLimpiar() {}
+  clickLimpiar() {
 
-
-  clickLimpiar(nombre: string, apellidos: string, fechaNacimiento: string, hijo: number, seguro: boolean) {
-    this.numeroPacientes = this.arregloPacientes.length;
-    this.idPaciente = this.numeroPacientes +1;
-    let paciente1 : Paciente = new Paciente(this.idPaciente,'Jorge','Borja','24/04/2019',0,true);
-    this.arregloPacientes.push(paciente1);
-    let paciente2 : Paciente = new Paciente(2,'Ivan','Suarez','25/04/219',2,false);
-    this.arregloPacientes.push(paciente2);
-    let paciente3 : Paciente = new Paciente(3,'Pedro','Cajamarca','24/68/1589',4,true);
-    this.arregloPacientes.push(paciente3);
   }
 
   numeroPacientes = 0;

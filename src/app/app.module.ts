@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
 import { AppComponent } from './app.component';
 import { CarruselComponent } from './carrusel/carrusel.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -18,6 +17,7 @@ import {FormMedicamentoComponent } from './form-medicamento/form-medicamento.com
 import {ButtonModule} from 'primeng/button';
 import {CardModule} from 'primeng/card';
 import {CardPacienteSeleccionadoComponent } from './card-paciente-seleccionado/card-paciente-seleccionado.component';
+import { TablaMedicamentosComponent } from './tabla-medicamentos/tabla-medicamentos.component';
 
 
 @NgModule({
@@ -27,7 +27,8 @@ import {CardPacienteSeleccionadoComponent } from './card-paciente-seleccionado/c
     FormIngresoComponent,
     CardPacienteComponent,
     FormMedicamentoComponent,
-    CardPacienteSeleccionadoComponent
+    CardPacienteSeleccionadoComponent,
+    TablaMedicamentosComponent
   ],
   imports: [
     FormsModule,
@@ -42,7 +43,7 @@ import {CardPacienteSeleccionadoComponent } from './card-paciente-seleccionado/c
     MatButtonToggleModule,
     InputTextModule,
     ButtonModule,
-    CardModule,
+    CardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

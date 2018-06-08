@@ -18,14 +18,17 @@ export class CardPacienteSeleccionadoComponent implements OnInit {
 
   ngOnInit() {
   }
-  funcion2(){
+  funcionDeterminarSeguro(){
     if (this.pacienteSeleccionado[0].seguro === true)
     {
       this.poseeSeguro = "SI"
+      console.log("veamos si llega 1")
     }
     if (this.pacienteSeleccionado[0].seguro === false)
     {
       this.poseeSeguro = "NO"
+
+      console.log("veamos si llega 2")
     }
   }
 }

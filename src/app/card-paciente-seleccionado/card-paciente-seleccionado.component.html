@@ -4,8 +4,8 @@
       Este paciente nacio el {{paciente.fechaNacimiento}}, tiene {{paciente.hijos}} hijos
     </p>
     <p-footer >
-      <p *ngIf="funcion2() || (pacienteSeleccionado.length)>0">
-        Tiene seguro: {{poseeSeguro}}
+      <p *ngIf="funcionDeterminarSeguro() || (pacienteSeleccionado.length)>0">
+        Tiene seguro: {{poseeSeguro}} {{paciente.seguro}}
       </p>
     </p-footer>
   </p-card>
