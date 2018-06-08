@@ -17,13 +17,13 @@
     </div>
     <div class="col-6">
       <h1>Ingreso de pacientes</h1>
-      <app-form-ingreso></app-form-ingreso>
+      <app-form-ingreso [arregloPacientes]="arregloPacientes"></app-form-ingreso>
     </div>
   </div>
   <div class="row">
     <div class="col-12">
       <h1>Lista de pacientes</h1>
-      <app-card-paciente></app-card-paciente>
+      <app-card-paciente [arregloPacientes]="arregloPacientes" [pacienteSeleccionado]="pacienteSeleccionado"></app-card-paciente>
     </div>
   </div>
   <div class="row">
@@ -33,7 +33,7 @@
     </div>
     <div class="col-6">
       <h1>Paciente seleccionado</h1>
-      <app-card-paciente-seleccionado></app-card-paciente-seleccionado>
+      <app-card-paciente-seleccionado [pacienteSeleccionado]="pacienteSeleccionado"></app-card-paciente-seleccionado>
     </div>
   </div>
   <div class="row">

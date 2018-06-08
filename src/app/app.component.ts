@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import {DataService} from "../data.service";
+import {Component, SimpleChanges} from '@angular/core';
+import {Paciente} from "./paciente";
 
 @Component({
   selector: 'app-root',
@@ -8,5 +8,7 @@ import {DataService} from "../data.service";
 })
 export class AppComponent {
   title = 'app';
+  arregloPacientes = [];
+  pacienteSeleccionado = [];
 }
 

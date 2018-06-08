@@ -1,14 +1,15 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {DataService} from "../../data.service";
+import {Paciente} from "../paciente";
 
 @Component({
   selector: 'app-form-ingreso',
   templateUrl: './form-ingreso.component.html',
-  styleUrls: ['./form-ingreso.component.css'],
-  providers: [DataService]
+  styleUrls: ['./form-ingreso.component.css']
 })
 
 export class FormIngresoComponent implements OnInit {
+  @Input() arregloPacientes;
+
   hijos = [
     {value: '0', viewValue: '0'},
     {value: '1', viewValue: '1'},
@@ -17,49 +18,41 @@ export class FormIngresoComponent implements OnInit {
     {value: '4', viewValue: '4'},
     {value: '5', viewValue: '5'}
   ];
-
   seguros = [
     {value: 'true', viewValue: 'Si'},
     {value: 'false', viewValue: 'No'}
   ];
 
-  message: string;
-
-  constructor(private data:DataService) {
-    this.numeroPacientes = this.pacientes.length;
-    this.idPaciente = this.numeroPacientes +1;
-    let paciente1 : Paciente = new Paciente(this.idPaciente,'Ivan','Borja','24/04/2019',2,true);
-    this.pacientes.push(paciente1)
+  constructor() {
   }
 
   ngOnInit() {
-    this.data.currentMessage.subscribe(message => this.message = message)
   }
-  public pacientes= [];
-  @Input () paciente : Paciente;
 
-  clickLimpiar() {
+  //clickLimpiar() {}
+
+
+  clickLimpiar(nombre: string, apellidos: string, fechaNacimiento: string, hijo: number, seguro: boolean) {
+    this.numeroPacientes = this.arregloPacientes.length;
+    this.idPaciente = this.numeroPacientes +1;
+    let paciente1 : Paciente = new Paciente(this.idPaciente,'Jorge','Borja','24/04/2019',0,true);
+    this.arregloPacientes.push(paciente1);
+    let paciente2 : Paciente = new Paciente(2,'Ivan','Suarez','25/04/219',2,false);
+    this.arregloPacientes.push(paciente2);
+    let paciente3 : Paciente = new Paciente(3,'Pedro','Cajamarca','24/68/1589',4,true);
+    this.arregloPacientes.push(paciente3);
   }
 
   numeroPacientes = 0;
   idPaciente = 0;
 
+
   clickCrear(nombre: string, apellidos: string, fechaNacimiento: string, hijo: number, seguro: boolean) {
-    this.numeroPacientes = this.pacientes.length;
+    this.numeroPacientes = this.arregloPacientes.length;
     this.idPaciente = this.numeroPacientes +1;
     let paciente1 : Paciente = new Paciente(this.idPaciente,nombre,apellidos,fechaNacimiento,hijo,seguro);
-    this.pacientes.push(paciente1)
+    this.arregloPacientes.push(paciente1);
   }
 }
 
-class Paciente {
-  constructor(
-    public id: number,
-    public nombres: string,
-    public apellidos: string,
-    public fechaNacimiento: string,
-    public hijos: number,
-    public seguro: boolean
-  ) {  }
 
-}

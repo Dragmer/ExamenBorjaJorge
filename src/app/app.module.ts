@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { CarruselComponent } from './carrusel/carrusel.component';
@@ -29,6 +30,7 @@ import {CardPacienteSeleccionadoComponent } from './card-paciente-seleccionado/c
     CardPacienteSeleccionadoComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     BrowserAnimationsModule,
     MatButtonModule,

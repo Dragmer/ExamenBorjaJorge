@@ -1,8 +1,12 @@
 <div class="container">
-  <p-card title="Apellido Nombre" [style]="{width: '360px'}">
-    Paciente nacido el 5/5/5
-    <p-footer>
-      Seguro
+  <p-card *ngFor="let paciente of pacienteSeleccionado" title="{{paciente.apellidos}} {{paciente.nombres}}" [style]="{width: '360px'}">
+    <p>
+      Este paciente nacio el {{paciente.fechaNacimiento}}, tiene {{paciente.hijos}} hijos
+    </p>
+    <p-footer >
+      <p *ngIf="funcion2() || (pacienteSeleccionado.length)>0">
+        Tiene seguro: {{poseeSeguro}}
+      </p>
     </p-footer>
   </p-card>
 </div>

@@ -1,27 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-carrusel',
   styleUrls: ['./carrusel.component.css'],
+  changeDetection: ChangeDetectionStrategy.Default,
   template:`
     <div id="carrusel1" class="carousel slide" data-ride="carousel">
+      <!--
       <ol class="carousel-indicators">
         <li data-target="#carrusel1" data-slide-to="0" class="active"></li>
         <li data-target="#carrusel1" data-slide-to="1"></li>
       </ol>
+      -->
       <div class="carousel-inner" role="listbox">
+        
         <div class="carousel-item active">
-          <img class="d-block w-100" src="http://nichegamer.s3-us-west-2.amazonaws.com/wp-content/uploads/2017/12/08112436/berserk-12-08-17-1.jpg" alt="First Slide">
+          <img class="d-block w-100" src="{{imagen1}}" alt="First Slide" style="width:600px;height:350px;">
           <div class="carousel-caption">
-            <h5>11111</h5>
-            <p>1111</p>
+            <h5>Lista de Pacientes</h5>
+            <p>Nombres</p>
           </div>
         </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" src="http://nichegamer.s3-us-west-2.amazonaws.com/wp-content/uploads/2017/12/08112436/berserk-12-08-17-1.jpg" alt="Second Slide">
-          <div class="carousel-caption">
-            <h5>2222</h5>
-            <p>2222</p>
+        
+        <div class="carousel-item active" *ngFor="let paciente of arregloPacientes" >
+          <img class="d-block w-100" src="{{imagen2}}" alt="Second Slide" style="width:600px;height:350px;">
+          <div  class="carousel-caption">
+            <h5>{{paciente.nombres}} {{paciente.apellidos}}</h5>
+            <p>{{paciente.fechaNacimiento}}</p>
           </div>
         </div>
       </div>
@@ -36,11 +41,13 @@ import { Component, OnInit } from '@angular/core';
     </div>
 `
 })
+
 export class CarruselComponent implements OnInit {
-  urlImagen1 = "http://nichegamer.s3-us-west-2.amazonaws.com/wp-content/uploads/2017/12/08112436/berserk-12-08-17-1.jpg";
-  urlImagen2 = "http://i.imgur.com/Esiq2FT.jpg";
-  imagen1 = this.urlImagen1;
-  imagen2 = this.urlImagen2;
+  @Input() arregloPacientes;
+
+  imagen1 = "http://nichegamer.s3-us-west-2.amazonaws.com/wp-content/uploads/2017/12/08112436/berserk-12-08-17-1.jpg";
+  imagen2 = "http://i.imgur.com/Esiq2FT.jpg";
+
   constructor() { }
 
   ngOnInit() {

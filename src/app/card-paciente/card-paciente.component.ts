@@ -1,23 +1,36 @@
-import { Component, OnInit, Input } from '@angular/core';
-import {DataService} from "../../data.service";
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  Input,
+} from '@angular/core';
+import {Paciente} from "../paciente";
 
 @Component({
   selector: 'app-card-paciente',
   templateUrl: './card-paciente.component.html',
   styleUrls: ['./card-paciente.component.css'],
-  providers: [DataService]
+  changeDetection: ChangeDetectionStrategy.Default
 })
 export class CardPacienteComponent implements OnInit {
+  @Input() arregloPacientes;
+  @Input() pacienteSeleccionado;
 
-  @Input() pacientes : any[];
-
-  message: string;
-  constructor(private data : DataService) { }
-
-  ngOnInit() {
-    this.data.currentMessage.subscribe(message => this.message = message)
+  constructor() {
   }
 
+  ngOnInit() {
+
+  }
+  seleccionarPaciente(id :number){
+    if (this.pacienteSeleccionado.length > 0)
+    {
+      this.pacienteSeleccionado.pop();
+    }
+    else {
+      this.pacienteSeleccionado.push(this.arregloPacientes[id - 1]);
+    }
+  }
 }
 
 
